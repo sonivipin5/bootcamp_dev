@@ -1,0 +1,23 @@
+{
+  "name": "camper_code",
+  "version": "1.0.0",
+  "description": "This is demo project for learn Node.js Backend",
+  "repository": {
+    "type": "git",
+    "url": "camper_code"
+  },
+  "license": "MIT",
+  "author": "Vipin Soni",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "NODE_ENV=production node index.js",
+    "dev": "nodemon index.js"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}

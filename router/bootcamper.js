@@ -1,21 +1,20 @@
 import express from 'express';
+import {
+    getBootcamper,
+    createBootcamper,
+    updateBootcamper,
+    deleteBootcamper
+} from '../controller/bootcamper.js';
 
 const router = express.Router();
 
-router.get('/', (req, res) => {
-  res.status(200).json({status:true, message:'Welcome to Bootcamper API'});
-});
+router.route('/')
+    .get(getBootcamper)
+    .post(createBootcamper);
 
-router.post('/', (req, res) => {
-  res.status(200).json({status:true, message:'Bootcamper created successfully'});
-});
-
-router.put('/:id', (req, res)=>{
-    res.status(200).json({status:true, message:`Bootcamper updated ${req.params.id} successfully`});
-});
-
-router.delete('/:id', (req, res)=>{
-    res.status(200).json({status:true, message:`Bootcamper deleted ${req.params.id} successfully`});
-});
+router.route('/:id')
+    .get(getBootcamper)
+    .put(updateBootcamper)
+    .delete(deleteBootcamper);
 
 export default router;
